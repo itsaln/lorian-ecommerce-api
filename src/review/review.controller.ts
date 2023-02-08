@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common'
-import { ReviewService } from './review.service'
+import { ReviewService } from '@app/review/review.service'
 
 @Controller('review')
 export class ReviewController {
@@ -7,7 +7,6 @@ export class ReviewController {
 
 	@Get()
 	findAll() {
-		return 1
 		return this.reviewService.findAll()
 	}
 

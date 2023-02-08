@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Query } from '@nestjs/common'
-import { ProductService } from './product.service'
-import { sortType } from './sort.type'
+import { ProductService } from '@app/product/product.service'
+import { sortType } from '@app/product/sort.type'
 
 @Controller('products')
 export class ProductController {

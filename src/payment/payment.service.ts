@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker'
 import { Injectable } from '@nestjs/common'
 import * as YooKassa from 'yookassa'
-import { PaymentStatusDto } from './dto/payment-status.dto'
-import { PaymentDto } from './dto/payment.dto'
+import { PaymentStatusDto } from '@app/payment/dto/payment-status.dto'
+import { PaymentDto } from '@app/payment/dto/payment.dto'
 
 const yooKassa = new YooKassa({
 	shopId: process.env['SHOP_ID'],

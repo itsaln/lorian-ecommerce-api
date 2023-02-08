@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
-import { PrismaService } from 'src/prisma.service'
-import { ReviewService } from 'src/review/review.service'
-import { sortType } from './sort.type'
+import { PrismaService } from '@app/prisma.service'
+import { ReviewService } from '@app/review/review.service'
+import { sortType } from '@app/product/sort.type'
 
 @Injectable()
 export class ProductService {
