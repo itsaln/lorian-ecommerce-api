@@ -12,7 +12,7 @@ const yooKassa = new YooKassa({
 @Injectable()
 export class PaymentService {
 	async payment(dto: PaymentDto) {
-		const payment = await yooKassa.createPayment({
+		return await yooKassa.createPayment({
 			amount: {
 				value: dto.amount.toFixed(2),
 				currency: 'RUB'
@@ -29,15 +29,12 @@ export class PaymentService {
 			/* CHANGE */
 			description: faker.name.jobTitle
 		})
-
-		return payment
 	}
 
 	async paymentStatus(dto: PaymentStatusDto) {
 		/* Confirm Payment */
 		if (dto.event !== 'payment.waiting_for_capture') return
 
-		const payment = await yooKassa.capturePayment(dto.object.id)
-		return payment
+		return await yooKassa.capturePayment(dto.object.id)
 	}
 }
